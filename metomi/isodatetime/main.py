@@ -50,7 +50,7 @@ SYNOPSIS
     # 3.  Print ISO8601 duration as total amount of a unit
     # 3.1 Into the total number of hours (H), minutes (M) or seconds (S)
     #     it represents.
-    
+
     # 4.  Print a number of time points in a ISO8601 recurrence
     # 4.1 Print N (default max 10) time points from start point
     isodatetime R/2020/P1Y
@@ -75,9 +75,9 @@ DESCRIPTION
     4. With a recurrence as argument, print N time points of the recurrence.
        The --max=N (default=10) can be used to control the maximum number
        of time points to print in the result.
-    
+
     Note: Negative durations can be provided in the following ways:
-        '\-PT1H'
+        \\-PT1H
         \\\\-PT1H
 
 CALENDAR MODE
@@ -222,7 +222,7 @@ def parse_args():
         ],
         [
             ["--offset1", "--offset", "-s", "-1"],
-            {  
+            {
                 "action": "append",
                 "dest": "offsets1",
                 "metavar": "OFFSET",
@@ -293,10 +293,10 @@ def main():
     args = parse_args()
 
     if args.offsets1:
-        args.offsets1 = [item.replace("\\","") for item in args.offsets1]
+        args.offsets1 = [item.replace("\\", "") for item in args.offsets1]
 
     if args.offsets2:
-        args.offsets2 = [item.replace("\\","") for item in args.offsets2]
+        args.offsets2 = [item.replace("\\", "") for item in args.offsets2]
 
     if args.version_mode:
         print(__version__)
